@@ -1,0 +1,48 @@
+﻿AspNetCoreDiagnosticScenarios:
+https://github.com/davidfowl/AspNetCoreDiagnosticScenarios
+
+1. Once Async always async
+-> put async/await from the bottom to the top
+
+Task<T> and Task<T>.Result
+-> https://stackoverflow.com/questions/27464287/what-is-the-difference-between-await-taskt-and-taskt-result
+
+
+2. Async void is bad
+-> if will throw a fatal exeption(the program stop running)
+-> use Task.Run(method);
+
+
+3. Prefer from result over run from precomputed stuff
+
+-> use Task.FromResult() instead of Task.Run()
+-> alternative: use ValueTask<> (https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/)
+
+
+4. Sync Over Async And DeadLocks
+
+-> .Result(), .Wait() can cause deadlocks (solved in .net core)
+-> it will use 2 threads instead of 1	  (the problem is in .net core too)
+
+
+5. Prefer await over .ContinueWith
+
+
+6. Always Pass Cancelation Token
+
+-> every Controller method have a CancellationToken method(is automatically populated from .net Core)
+-> can be use in : network call to a HTTP client, DataBase call
+
+-> with Cancelation Token		: you can cancel a request to database and u don't need to reload the page
+-> without Cancelation Token	: you need to reload the page
+
+
+7. PreferAsyncOverTask
+
+-> when you use await/async, the asynchronous and synchronous exceptions are actually normalized to be asynchronous
+-> the code is easier to modify
+
+
+8. Async in constructors
+
+
