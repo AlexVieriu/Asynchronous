@@ -1,8 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-namespace RowCoding_StateMachine
+﻿namespace RowCoding_StateMachine
 {
     // https://youtu.be/il9gl8MH17s?t=920
     class Program

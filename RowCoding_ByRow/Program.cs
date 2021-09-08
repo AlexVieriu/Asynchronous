@@ -1,9 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace RowCoding_ByThread
+﻿namespace RowCoding_ByThread
 {
     // https://youtu.be/il9gl8MH17s?t=518
     // https://www.linqpad.net/
